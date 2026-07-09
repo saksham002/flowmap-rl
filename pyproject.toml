@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flow-rl"
+version = "0.1.0"
+description = "One-step flow Q-learning + shared-backbone study on Push-T (JAX/Equinox)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "jax[cuda12]>=0.7.0",
+    "equinox>=0.13.0",
+    "optax>=0.2.4",
+    "jaxtyping>=0.2.36",
+    "einops>=0.8.0",
+    "numpy",
+    "tqdm",
+    "wandb",
+    "imageio[ffmpeg]",
+    "matplotlib",
+    "eqxvision",
+    "gym-pusht",
+    "pymunk<7.0.0",
+    "lerobot",
+    "torchvision",
+]
+
+[tool.uv.sources]
+eqxvision = { git = "https://github.com/saksham002/eqxvision", rev = "e2dbca4108d2080180ed70c719967e80b06bfd03" }
+
+[tool.hatch.build.targets.wheel]
+packages = ["flow_rl"]

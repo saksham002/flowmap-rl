@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Large / generated data (checkpoints, wandb, logs)
+scratch/
+wandb/
+logs/
+*.eqx
+*.log
+
+# One-time run infra / utility scripts
+scripts/
+
+# Run outputs / job-tracking / parity artifacts
+best_eval_*.txt
+launch_jobs.txt
+eval500_jobs.txt
+parity_before.json
+parity_before.err
+
+# Top-level monitoring helpers
+eval500_poll.sh
+speed_monitor.sh
+
+# Local editor / agent settings
+.claude/
